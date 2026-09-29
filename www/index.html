@@ -93,6 +93,7 @@ button{font:inherit;color:inherit}
 #trick{position:relative;width:calc(var(--tw)*3.05);height:calc(var(--th)*2.2)}
 .toast{position:absolute;left:50%;top:calc(50% - var(--th)*1.1 - 46px);transform:translateX(-50%);background:rgba(8,20,28,.86);border:1px solid rgba(214,163,76,.4);padding:7px 14px;border-radius:999px;font-size:12.5px;font-weight:600;white-space:nowrap;opacity:0;transition:opacity .3s,transform .3s;z-index:5;display:flex;align-items:center;gap:6px;max-width:calc(100% - 24px)}
 .toast.show{opacity:1}
+.toast{white-space:normal;text-align:center;justify-content:center;width:max-content;line-height:1.35}
 .toast svg{width:14px;height:14px}
 .toast .red{color:#e0606c}
 
@@ -408,6 +409,13 @@ button{font:inherit;color:inherit}
 .on-send{display:flex;gap:8px}.on-send input{flex:1;min-width:0;height:42px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 @media (max-width:420px){.on-table{grid-template-columns:1fr 1fr 1fr;gap:6px}.on-seat{min-height:104px;padding:10px 4px}.on-ava{width:38px;height:38px;font-size:16px}.lb{grid-template-columns:1fr 1fr}.on-nav button{min-width:72px;padding:0 10px}}
+.on-acts{display:flex;gap:8px;flex-wrap:wrap}
+.on-link{margin:4px 0 6px;padding:12px 14px;border-radius:12px;background:rgba(0,0,0,.25);box-shadow:inset 0 0 0 1px rgba(214,163,76,.3);overflow-wrap:anywhere}
+.on-link code{font-family:var(--mono);font-size:13px;color:var(--gold-2)}
+.on-who{all:unset;cursor:pointer;font-weight:700;color:var(--gold-2);margin-right:6px;text-decoration:underline dotted rgba(241,203,128,.5);text-underline-offset:3px}
+.on-who:focus-visible{outline:2px solid var(--gold-2);outline-offset:2px;border-radius:4px}
+.nm .away{color:#ef9aa3;font-weight:600}
+.on-msgs p .on-who{display:block;font-size:11.5px;margin:0 0 2px}
 
 /*ONLINE-CSS-END*/
 /* ---------- effects ---------- */
@@ -639,7 +647,7 @@ kk:{
  teamA:'1-команда',teamB:'2-команда',losses:'Жеңіліс',quits:'Шығып кетті',winrate:'Жеңіс %',logout:'Аккаунттан шығу',
  leaveGameQ:'Ойыннан шығасыз ба?',leaveGameTxt:'Шықсаңыз, жеңіліс есептеліп, «шығып кетті» санына +1 қосылады. Орныңызға бот отырады.',leaveRoomQ:'Бөлмеден шығасыз ба?',
  ready:'Дайынмын',nextSoon:'Барлығы дайын болғанда келесі тарату басталады',toRoom:'Бөлмеге оралу',unrated:'Рейтингсіз ойын: қарсыласта адам болмады',resumeQ:'Аяқталмаған ойыныңыз бар. Қайта кіресіз бе?',rejoin:'Қайта кіру',
- redealWait:'Қайта таратылуда…',roomGone:'Бөлме жабылды',hostNow:'Енді сіз ойын иесісіз',me:'сіз',rules_t:'Ережелер',create:'Ашу',cancel:'Бас тарту',quitPenalty:'Аяқталмаған ойын үшін айыппұл: {0}',loading:'Жүктелуде…',rank:'Орын',
+ redealWait:'Қайта таратылуда…',roomGone:'Бөлме жабылды',quick:'Жылдам ойын',quickT:'Бос орын іздеп жатыр…',invite:'Шақыру',inviteT:'Досыңды шақыр',inviteMsg:'Белка ойнайық! Бөлмеге кір: {0}',copyLink:'Сілтемені көшіру',copied:'Сілтеме көшірілді',gameStarted:'Бұл бөлмеде ойын басталып кеткен',roomFull:'Бөлме толы',seatAway:'{0} шығып кетті — орнына бот ойнайды',seatBack:'{0} ойынға оралды',away:'бот ойнап тұр',block:'Үнін өшіру',unblock:'Үнін қосу',report:'Шағым түсіру',reported:'Шағым жіберілді. Рақмет!',blockedTxt:'Бұл ойыншының хабарлары сізге көрінбейді.',playerT:'Ойыншы',hostNow:'Енді сіз ойын иесісіз',me:'сіз',rules_t:'Ережелер',create:'Ашу',cancel:'Бас тарту',quitPenalty:'Аяқталмаған ойын үшін айыппұл: {0}',loading:'Жүктелуде…',rank:'Орын',
  eyesAria:'{0}: {1} көз'
 },
 ru:{
@@ -690,7 +698,7 @@ ru:{
  teamA:'Команда 1',teamB:'Команда 2',losses:'Поражений',quits:'Выходов',winrate:'Побед %',logout:'Выйти из аккаунта',
  leaveGameQ:'Выйти из игры?',leaveGameTxt:'Выход засчитается как поражение и +1 к выходам. Ваше место займёт бот.',leaveRoomQ:'Выйти из комнаты?',
  ready:'Готов',nextSoon:'Следующая раздача начнётся, когда все будут готовы',toRoom:'В комнату',unrated:'Игра без рейтинга: среди соперников не было людей',resumeQ:'У вас есть незаконченная игра. Вернуться?',rejoin:'Вернуться',
- redealWait:'Пересдача…',roomGone:'Комната закрыта',hostNow:'Теперь вы хозяин игры',me:'вы',rules_t:'Правила',create:'Создать',cancel:'Отмена',quitPenalty:'Штраф за незаконченную игру: {0}',loading:'Загрузка…',rank:'Место',
+ redealWait:'Пересдача…',roomGone:'Комната закрыта',quick:'Быстрая игра',quickT:'Ищем свободное место…',invite:'Позвать',inviteT:'Позови друга',inviteMsg:'Давай в Белку! Заходи в комнату: {0}',copyLink:'Скопировать ссылку',copied:'Ссылка скопирована',gameStarted:'В этой комнате игра уже началась',roomFull:'Комната заполнена',seatAway:'{0} отключился — за него играет бот',seatBack:'{0} вернулся в игру',away:'играет бот',block:'Скрыть сообщения',unblock:'Показать сообщения',report:'Пожаловаться',reported:'Жалоба отправлена. Спасибо!',blockedTxt:'Сообщения этого игрока скрыты.',playerT:'Игрок',hostNow:'Теперь вы хозяин игры',me:'вы',rules_t:'Правила',create:'Создать',cancel:'Отмена',quitPenalty:'Штраф за незаконченную игру: {0}',loading:'Загрузка…',rank:'Место',
  eyesAria:'{0}: {1} глаз'
 },
 en:{
@@ -741,7 +749,7 @@ en:{
  teamA:'Team 1',teamB:'Team 2',losses:'Losses',quits:'Quits',winrate:'Win %',logout:'Log out',
  leaveGameQ:'Leave the game?',leaveGameTxt:'Leaving counts as a loss and adds 1 to your quits. A bot takes your seat.',leaveRoomQ:'Leave the room?',
  ready:'Ready',nextSoon:'The next deal starts when everyone is ready',toRoom:'Back to room',unrated:'Unrated: there were no human opponents',resumeQ:'You have an unfinished game. Rejoin?',rejoin:'Rejoin',
- redealWait:'Redealing…',roomGone:'The room was closed',hostNow:'You are now the host',me:'you',rules_t:'Rules',create:'Create',cancel:'Cancel',quitPenalty:'Penalty for an unfinished game: {0}',loading:'Loading…',rank:'Rank',
+ redealWait:'Redealing…',roomGone:'The room was closed',quick:'Quick game',quickT:'Finding a free seat…',invite:'Invite',inviteT:'Invite a friend',inviteMsg:'Let’s play Belka! Join my room: {0}',copyLink:'Copy link',copied:'Link copied',gameStarted:'The game in this room has already started',roomFull:'The room is full',seatAway:'{0} disconnected — a bot is playing for them',seatBack:'{0} is back',away:'bot playing',block:'Mute player',unblock:'Unmute player',report:'Report',reported:'Report sent. Thank you!',blockedTxt:'Messages from this player are hidden.',playerT:'Player',hostNow:'You are now the host',me:'you',rules_t:'Rules',create:'Create',cancel:'Cancel',quitPenalty:'Penalty for an unfinished game: {0}',loading:'Loading…',rank:'Rank',
  eyesAria:'{0}: {1} eyes'
 }};
 
@@ -1085,7 +1093,7 @@ function renderSeats(){if(ENG)return;
     const n=G.hands[s].length;
     const badge=G.jcHolder===s?`<span class="jtag" title="${t('jackHere')}">${svg('C')}<b>${LABEL.J}</b></span>`:'';
     const ss=G.seatSuit&&G.deal>1?`<span class="ssuit${RED(G.seatSuit[s])?' red':''}${G.seatSuit[s]===G.trump?' on':''}">${svg(G.seatSuit[s])}</span>`:'';
-    el.innerHTML=`<div class="ava${s===2?' partner':''}">${avatarSVG(s)}${badge}${ss}</div><div class="nm">${NAMES[s]}</div><div class="backs">${'<span class="mb"></span>'.repeat(n)}</div>`;
+    el.innerHTML=`<div class="ava${s===2?' partner':''}">${avatarSVG(s)}${badge}${ss}</div><div class="nm">${NAMES[s]}${ONLINE&&typeof onlineAway==="function"&&onlineAway(s)?`<small class="away"> · ${t("away")}</small>`:""}</div><div class="backs">${'<span class="mb"></span>'.repeat(n)}</div>`;
     el.classList.toggle('turn',G.phase==='play'&&G.turn===s&&G.trick.length<4);
   }
   $('#me').classList.toggle('turn',G.phase==='play'&&G.turn===0&&G.trick.length<4);
@@ -1477,17 +1485,19 @@ function openOnline(){
   netInit();
   if(!ON)ON={unsub:[],msgs:[],pres:{}};
   $('#online').hidden=false;
-  if(ON.uid){lobby();return}
+  if(ON.uid){if(ON.pendingRoom){const r=ON.pendingRoom;ON.pendingRoom=null;joinRoom(r)}else lobby();return}
   $('#online').innerHTML=`<div class="on-wrap"><p class="on-wait">${t('loading')}</p></div>`;
   if(ON.authBound){authView();return}ON.authBound=true;
   NET.onAuth(async u=>{
     if(ON.uid&&u&&u.uid===ON.uid)return;
     if(!u){ON.uid=null;authView();return}
     ON.uid=u.uid;
-    const prof=await NET.get('users/'+u.uid);
-    if(!prof){ if(ON.pendingNick){await NET.set('users/'+u.uid,{nick:ON.pendingNick,rating:1000,games:0,wins:0,losses:0,quits:0,created:Date.now()})} else {await NET.signOut();return} }
+    let prof=await NET.get('users/'+u.uid);
+    if(!prof){ if(ON.pendingNick){prof={nick:ON.pendingNick,rating:1000,games:0,wins:0,losses:0,quits:0,created:Date.now()};await NET.set('users/'+u.uid,prof)} else {await NET.signOut();return} }
+    ON.prof=prof;ON.nick=prof.nick;
     watchProfile();
     await checkActive();
+    if(ON.pendingRoom&&!ON.resume){const r=ON.pendingRoom;ON.pendingRoom=null;joinRoom(r);return}
     lobby();
   });
 }
@@ -1529,9 +1539,9 @@ function authView(mode='login',err=''){
 function stopLobby(){if(ON.lobbyOff){ON.lobbyOff.forEach(f=>f());ON.lobbyOff=null}}
 function lobby(){
   stopLobby();ON.view='lobby';
-  onShell('lobby',`<div class="on-head"><h2>${t('rooms')}</h2><button class="btn gold sm" data-act="on-create">${t('createRoom')}</button></div><div id="on-rooms" class="on-rooms"><p class="on-wait">${t('loading')}</p></div>`);
+  onShell('lobby',`<div class="on-head"><h2>${t('rooms')}</h2><div class="on-acts"><button class="btn gold sm" data-act="on-quick">⚡ ${t('quick')}</button><button class="btn ghost sm" data-act="on-create">${t('createRoom')}</button></div></div><div id="on-rooms" class="on-rooms"><p class="on-wait">${t('loading')}</p></div>`);
   let rooms={},pres={};
-  const draw=()=>{const el=$('#on-rooms');if(!el||ON.view!=='lobby')return;
+  const draw=()=>{ON.lobbyRooms=rooms;ON.lobbyPres=pres;const el=$('#on-rooms');if(!el||ON.view!=='lobby')return;
     const list=Object.entries(rooms||{}).filter(([k,r])=>r&&r.status==='lobby'&&r.host&&pres[k]&&pres[k][r.host]&&Date.now()-(r.created||0)<6*3600e3)
       .sort((a,b)=>(b[1].created||0)-(a[1].created||0));
     el.innerHTML=list.length?list.map(([k,r])=>{const seats=r.seats||{};const n=[0,1,2,3].filter(i=>seats[i]).length;
@@ -1570,14 +1580,16 @@ function createRoomSheet(){
 }
 async function createRoom(){
   readSetup();const chat=(document.querySelector('input[name="r-chat"]:checked')||{}).value!=='0';closeSheet();
-  let code;for(let i=0;i<6;i++){code=Array.from({length:5},()=>'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[Math.floor(Math.random()*32)]).join('');if(!(await NET.get('rooms/'+code)))break}
+  const code=await newRoomCode();
   await NET.set('rooms/'+code,{host:ON.uid,hostNick:ON.nick,created:Date.now(),status:'lobby',rules:{...RULES},chat,seats:{0:meSeatObj()}});
   enterRoom(code);
 }
 async function joinRoom(code){
-  const room=await NET.get('rooms/'+code);if(!room||room.status!=='lobby'){lobby();return}
+  const room=await NET.get('rooms/'+code);
+  if(room&&room.status==='playing'&&mySeatIn(room)>=0){enterRoom(code);return}
+  if(!room||room.status!=='lobby'){lobby();toast(room?t('gameStarted'):t('roomGone'),3000);return}
   const st=room.seats||{};let s=mySeatIn(room);
-  if(s<0){s=[0,1,2,3].find(i=>!st[i]);if(s===undefined){lobby();return}await NET.set(`rooms/${code}/seats/${s}`,meSeatObj())}
+  if(s<0){s=[0,1,2,3].find(i=>!st[i]);if(s===undefined){lobby();toast(t('roomFull'),3000);return}await NET.set(`rooms/${code}/seats/${s}`,meSeatObj())}
   enterRoom(code);
 }
 function enterRoom(code){
@@ -1610,6 +1622,10 @@ function roomChanged(room){
 function presenceChanged(){
   if(!ON||!ON.room)return;
   const room=ON.room;
+  if(ONLINE&&room.status==='playing'){const st=room.seats||{};ON.prevPres=ON.prevPres||{};
+    [0,1,2,3].forEach(s=>{const x=st[s];if(!x||x.bot||x.uid===ON.uid)return;const now=isPresent(x.uid),was=ON.prevPres[x.uid]===undefined?true:ON.prevPres[x.uid];
+      if(was!==undefined&&was!==now){clearTimeout((ON.awayT=ON.awayT||{})[x.uid]);ON.awayT[x.uid]=setTimeout(()=>{if(isPresent(x.uid)===now){toast(t(now?'seatBack':'seatAway',esc(x.nick)),3200);if(G)renderSeats()}},now?300:4000)}
+      ON.prevPres[x.uid]=now});if(G)renderSeats();}
   // host migration
   if(room.status==='playing'&&!ON.host&&room.host&&!isPresent(room.host)){
     clearTimeout(ON.migT);ON.migT=setTimeout(()=>{
@@ -1632,7 +1648,7 @@ function roomView(){
       :`<div class="on-ava empty">+</div><b>${t('emptySeat')}</b>${host?`<span class="btn ghost xs" data-act="on-bot" data-seat="${s}">${t('addBot')}</span>`:''}`;
     return `<button class="on-seat s${s}${sel?' sel':''}${x?'':' empty'} ${s%2?'tb':'ta'}" data-act="on-seat" data-seat="${s}">${inner}</button>`};
   const full=[0,1,2,3].every(i=>st[i]);
-  onShell(null,`<div class="on-head"><h2>${t('roomT',esc(ON.r))}</h2><button class="btn ghost sm" data-act="on-leave-room">${t('leave')}</button></div>
+  onShell(null,`<div class="on-head"><h2>${t('roomT',esc(ON.r))}</h2><div class="on-acts"><button class="btn gold sm" data-act="on-invite">＋ ${t('invite')}</button><button class="btn ghost sm" data-act="on-leave-room">${t('leave')}</button></div></div>
    <div class="on-table">${tile(2)}${tile(1)}<div class="on-mid"><div class="on-rl">${ruleChipsMini(room.rules)}</div><small><i class="dot ta"></i>${t('teamA')} · <i class="dot tb"></i>${t('teamB')}</small></div>${tile(3)}${tile(0)}</div>
    <p class="on-hint">${host?t('swapHint'):t('moveHint')}</p>
    ${host?`<div class="row"><button class="btn gold" data-act="on-start" ${full?'':'disabled'}>${t('start')}</button><button class="btn ghost" data-act="on-chat-toggle">${room.chat?t('chatOn'):t('chatOff')}</button></div>${full?'':`<p class="on-hint">${t('needFour')}</p>`}`:`<p class="on-wait">${t('waitHost')}</p>`}
@@ -1657,11 +1673,13 @@ function chatBox(){
   return `<div class="on-chat"><div class="on-chat-h"><b>${t('chat')}</b><label class="on-mute"><input type="checkbox" id="on-mute" data-act="on-mute"> ${t('muteChat')}</label></div>
   <div class="on-msgs" id="on-msgs">${msgsHTML()}</div>
   <form class="on-send" id="on-send"><label class="sr" for="on-msg">${t('msgPh')}</label><input id="on-msg" maxlength="200" placeholder="${t('msgPh')}" autocomplete="off"><button class="btn gold sm" type="submit">${t('send')}</button></form></div>`}
-const msgsHTML=()=>ON.msgs.length?ON.msgs.map(m=>`<p class="${m.uid===ON.uid?'mine':''}"><b>${esc(m.nick)}</b>${esc(m.text)}</p>`).join(''):`<p class="on-empty">${t('noMsgs')}</p>`;
+const visMsgs=()=>ON.msgs.filter(m=>!isBlocked(m.uid));
+const msgsHTML=()=>visMsgs().length?visMsgs().map(m=>`<p class="${m.uid===ON.uid?'mine':''}">${m.uid===ON.uid?`<b>${esc(m.nick)}</b>`:`<button type="button" class="on-who" data-act="on-player" data-uid="${esc(m.uid)}" data-nick="${esc(m.nick)}">${esc(m.nick)}</button>`}${esc(m.text)}</p>`).join(''):`<p class="on-empty">${t('noMsgs')}</p>`;
 function wireChat(){const f=$('#on-send');if(!f)return;const box=$('#on-msgs');if(box)box.scrollTop=box.scrollHeight;
   f.addEventListener('submit',e=>{e.preventDefault();const i=$('#on-msg');const v=i.value.trim().slice(0,200);if(!v||!ON.room||!ON.room.chat)return;
     NET.push('chat/'+ON.r,{uid:ON.uid,nick:ON.nick,text:v,ts:Date.now()});i.value='';i.focus()})}
 function chatArrived(m){
+  if(isBlocked(m.uid))return;
   const box=$('#on-msgs');if(box){box.innerHTML=msgsHTML();box.scrollTop=box.scrollHeight}
   else if(ONLINE&&m.uid!==ON.uid&&!chatMuted()){ON.unread=(ON.unread||0)+1;chatBadge();
     if(!$('#overlay').innerHTML)toast(`<b>${esc(m.nick)}:</b> ${esc(m.text).slice(0,60)}`,2600)}
@@ -1837,13 +1855,14 @@ function eloFor(A,seat,won){
 }
 const ratedFor=(A,seat)=>{const b=A.bots||[];const o=(seat+1)%2;return !(b[o]&&b[o+2])};
 function markActive(A){
-  if(!ON||A.phase==='over')return;
+  if(!ON||A.phase==='over')return;try{localStorage.setItem('belka-lastroom',ON.r)}catch(e){}
   NET.set(`users/${ON.uid}/active`,{r:ON.r,gid:A.gid,loss:ratedFor(A,ON.seat)?eloFor(A,ON.seat,false):0});
 }
 async function onlineFinish(V){
   if(ON.doneGid===V.gid)return;ON.doneGid=V.gid;
   const A=normState(ON.room.state),won=V.eyes[0]>=12,rated=ratedFor(A,ON.seat);ON.unrated=!rated;
   const p=ownProf(),old=r2(p.rating||1000),d=rated?eloFor(A,ON.seat,won):0,now=r2(Math.max(0,old+d));
+  try{localStorage.removeItem('belka-lastroom')}catch(e){}
   V.result.rating=rated?{old,now,up:tierOf(now)>tierOf(old),dec:true}:null;
   await NET.update('users/'+ON.uid,{rating:now,games:(p.games||0)+1,wins:(p.wins||0)+(won?1:0),losses:(p.losses||0)+(won?0:1),active:null});
 }
@@ -1877,6 +1896,7 @@ async function exitRoom(penalize){
     }
     if(room&&room.status==='over'&&room.host===ON.uid){const st=room.seats||{};const others=[0,1,2,3].filter(s=>st[s]&&!st[s].bot&&st[s].uid!==ON.uid&&isPresent(st[s].uid));if(!others.length)await NET.update('',{[`rooms/${r}`]:null,[`hands/${r}`]:null,[`chat/${r}`]:null,[`ready/${r}`]:null})}
   }
+  try{localStorage.removeItem('belka-lastroom')}catch(e){}
   HG=null;ON.r=null;ON.room=null;ON.V=null;ON.seat=-1;ON.host=false;ON.handSeat=null;
   ONLINE=false;G=null;clearTimers();closeSheet();setLangData();
   $('#online').hidden=false;$('#title').hidden=true;lobby();
@@ -1904,9 +1924,77 @@ async function onlineAct(act,a,e){
   if(act==='on-exit'){exitRoom(false);return}
   if(act==='on-quit'){closeSheet();exitRoom(true);return}
   if(act==='on-forfeit'){closeSheet();const a=ownProf().active;ON.resume=null;await applyQuit(a&&a.loss);lobby();return}
+  if(act==='on-quick'){quickPlay();return}
+  if(act==='on-invite'){inviteSheet();return}
+  if(act==='on-share'){shareInvite();return}
+  if(act==='on-copy'){copyInvite();return}
+  if(act==='on-player'){playerSheet(a.dataset.uid,a.dataset.nick);return}
+  if(act==='on-block'){toggleBlock(a.dataset.uid);closeSheet();if(ON.view==='room')roomView();return}
+  if(act==='on-report'){reportPlayer(a.dataset.uid,a.dataset.nick);return}
   if(act==='on-rejoin'){closeSheet();const r=ON.resume;ON.resume=null;enterRoom(r);return}
 }
-if(NET_MODE==='mock')window.__BELKA={get HG(){return HG},set HG(v){HG=v},eng,get ON(){return ON},get G(){return G},endDeal,startDeal,clearTimers};
+/* ---- quick play ---- */
+async function quickPlay(){
+  toast(t('quickT'),2000);
+  const rooms=ON.lobbyRooms||(await NET.get('rooms'))||{},pres=ON.lobbyPres||(await NET.get('presence'))||{};
+  const open=Object.entries(rooms).filter(([k,r])=>r&&r.status==='lobby'&&r.host&&pres[k]&&pres[k][r.host]&&Date.now()-(r.created||0)<6*3600e3)
+    .map(([k,r])=>[k,[0,1,2,3].filter(i=>(r.seats||{})[i]).length]).filter(([,n])=>n<4).sort((a,b)=>b[1]-a[1]);
+  if(open.length){joinRoom(open[0][0]);return}
+  const code=await newRoomCode();
+  await NET.set('rooms/'+code,{host:ON.uid,hostNick:ON.nick,created:Date.now(),status:'lobby',rules:{...RULES},chat:true,quick:true,seats:{0:meSeatObj()}});
+  enterRoom(code);
+}
+async function newRoomCode(){let code;for(let i=0;i<6;i++){code=Array.from({length:5},()=>'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[Math.floor(Math.random()*32)]).join('');if(!(await NET.get('rooms/'+code)))break}return code}
+
+/* ---- invite ---- */
+const SITE_URL='https://nn16nn.github.io/Belka/';
+const inviteUrl=()=>SITE_URL+'?room='+encodeURIComponent(ON.r||'');
+function inviteSheet(){
+  openSheet(`<div class="eyebrow">${t('roomT',esc(ON.r))}</div><h2>${t('inviteT')}</h2>
+   <div class="on-link"><code>${esc(inviteUrl())}</code></div>
+   <div class="row"><button class="btn gold" data-act="on-share">WhatsApp</button><button class="btn ghost" data-act="on-copy">${t('copyLink')}</button></div>
+   <div class="row"><button class="btn ghost" data-act="close">${t('close')}</button></div>`);
+}
+function shareInvite(){
+  const txt=t('inviteMsg',inviteUrl());
+  if(navigator.share){navigator.share({text:txt}).catch(()=>{});return}
+  window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank');
+}
+async function copyInvite(){
+  const u=inviteUrl();let ok=false;
+  try{await navigator.clipboard.writeText(u);ok=true}catch(e){}
+  if(!ok){const ta=document.createElement('textarea');ta.value=u;document.body.appendChild(ta);ta.select();try{ok=document.execCommand('copy')}catch(e){}ta.remove()}
+  toast(ok?t('copied'):u,2600);
+}
+
+/* ---- block / report ---- */
+function blockedList(){try{return JSON.parse(localStorage.getItem('belka-blocked'))||[]}catch(e){return[]}}
+const isBlocked=uid=>!!uid&&blockedList().includes(uid);
+function toggleBlock(uid){const b=blockedList();const i=b.indexOf(uid);if(i<0)b.push(uid);else b.splice(i,1);try{localStorage.setItem('belka-blocked',JSON.stringify(b.slice(-200)))}catch(e){}}
+function playerSheet(uid,nick){
+  const bl=isBlocked(uid);
+  openSheet(`<div class="eyebrow">${t('playerT')}</div><h2>${esc(nick)}</h2>${bl?`<p>${t('blockedTxt')}</p>`:''}
+   <div class="row"><button class="btn ghost" data-act="on-block" data-uid="${esc(uid)}">${bl?t('unblock'):t('block')}</button><button class="btn ghost" data-act="on-report" data-uid="${esc(uid)}" data-nick="${esc(nick)}">${t('report')}</button></div>
+   <div class="row"><button class="btn gold" data-act="close">${t('close')}</button></div>`);
+}
+async function reportPlayer(uid,nick){
+  const last=ON.msgs.filter(m=>m.uid===uid).slice(-5).map(m=>m.text);
+  try{await NET.push('reports',{by:ON.uid,byNick:ON.nick,uid,nick,room:ON.r||'',msgs:last,ts:Date.now()})}catch(e){}
+  if(!isBlocked(uid))toggleBlock(uid);
+  closeSheet();toast(t('reported'),2800);if(ON.view==='room')roomView();
+}
+/* ---- away seats (view index) ---- */
+function onlineAway(v){if(!ON||!ON.room||ON.seat<0||v===0)return false;const s=(v+ON.seat)%4;const x=(ON.room.seats||{})[s];return !!(x&&!x.bot&&!isPresent(x.uid))}
+
+/* ---- deep link & auto-resume on launch ---- */
+(function(){
+  let room=null;try{room=new URLSearchParams(location.search).get('room')}catch(e){}
+  let last=null;try{last=localStorage.getItem('belka-lastroom')}catch(e){}
+  if(!NET_MODE)return;
+  if(room&&/^[A-Z0-9]{4,8}$/.test(room)){setTimeout(()=>{if(!ON)ON={unsub:[],msgs:[],pres:{}};ON.pendingRoom=room;openOnline();try{history.replaceState(null,'',location.pathname)}catch(e){}},400)}
+  else if(last){setTimeout(()=>openOnline(),400)}
+})();
+if(NET_MODE==='mock')window.__BELKA={get HG(){return HG},set HG(v){HG=v},eng,get ON(){return ON},get G(){return G},endDeal,startDeal,clearTimers,quickPlay,inviteUrl};
 $('#btnOnline').addEventListener('click',()=>{ac();openOnline()});
 $('#btnChat').addEventListener('click',openChatSheet);
 

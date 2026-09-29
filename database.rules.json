@@ -2,20 +2,36 @@
   "rules": {
     "users": {
       ".read": "auth != null",
-      ".indexOn": ["rating"],
+      ".indexOn": [
+        "rating"
+      ],
       "$uid": {
         ".write": "auth != null",
-        "nick":   { ".validate": "newData.isString() && newData.val().length <= 16" },
-        "rating": { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 5000" },
-        "games":  { ".validate": "newData.isNumber()" },
-        "wins":   { ".validate": "newData.isNumber()" },
-        "losses": { ".validate": "newData.isNumber()" },
-        "quits":  { ".validate": "newData.isNumber()" }
+        "nick": {
+          ".validate": "newData.isString() && newData.val().length <= 16"
+        },
+        "rating": {
+          ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 5000"
+        },
+        "games": {
+          ".validate": "newData.isNumber()"
+        },
+        "wins": {
+          ".validate": "newData.isNumber()"
+        },
+        "losses": {
+          ".validate": "newData.isNumber()"
+        },
+        "quits": {
+          ".validate": "newData.isNumber()"
+        }
       }
     },
     "rooms": {
       ".read": "auth != null",
-      "$room": { ".write": "auth != null" }
+      "$room": {
+        ".write": "auth != null"
+      }
     },
     "hands": {
       "$room": {
@@ -25,14 +41,40 @@
         }
       }
     },
-    "moves":    { "$room": { ".read": "auth != null", ".write": "auth != null" } },
-    "ready":    { "$room": { ".read": "auth != null", ".write": "auth != null" } },
-    "presence": { ".read": "auth != null", "$room": { "$uid": { ".write": "auth != null" } } },
+    "moves": {
+      "$room": {
+        ".read": "auth != null",
+        ".write": "auth != null"
+      }
+    },
+    "ready": {
+      "$room": {
+        ".read": "auth != null",
+        ".write": "auth != null"
+      }
+    },
+    "presence": {
+      ".read": "auth != null",
+      "$room": {
+        "$uid": {
+          ".write": "auth != null"
+        }
+      }
+    },
     "chat": {
       "$room": {
         ".read": "auth != null",
         ".write": "auth != null",
-        "$msg": { "text": { ".validate": "newData.isString() && newData.val().length <= 200" } }
+        "$msg": {
+          "text": {
+            ".validate": "newData.isString() && newData.val().length <= 200"
+          }
+        }
+      }
+    },
+    "reports": {
+      "$id": {
+        ".write": "auth != null && !data.exists() && newData.child('by').val() === auth.uid"
       }
     }
   }
