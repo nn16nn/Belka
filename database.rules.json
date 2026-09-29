@@ -1,0 +1,39 @@
+{
+  "rules": {
+    "users": {
+      ".read": "auth != null",
+      ".indexOn": ["rating"],
+      "$uid": {
+        ".write": "auth != null",
+        "nick":   { ".validate": "newData.isString() && newData.val().length <= 16" },
+        "rating": { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 5000" },
+        "games":  { ".validate": "newData.isNumber()" },
+        "wins":   { ".validate": "newData.isNumber()" },
+        "losses": { ".validate": "newData.isNumber()" },
+        "quits":  { ".validate": "newData.isNumber()" }
+      }
+    },
+    "rooms": {
+      ".read": "auth != null",
+      "$room": { ".write": "auth != null" }
+    },
+    "hands": {
+      "$room": {
+        ".write": "auth != null && root.child('rooms/' + $room + '/host').val() === auth.uid",
+        "$seat": {
+          ".read": "auth != null && (root.child('rooms/' + $room + '/seats/' + $seat + '/uid').val() === auth.uid || root.child('rooms/' + $room + '/host').val() === auth.uid)"
+        }
+      }
+    },
+    "moves":    { "$room": { ".read": "auth != null", ".write": "auth != null" } },
+    "ready":    { "$room": { ".read": "auth != null", ".write": "auth != null" } },
+    "presence": { ".read": "auth != null", "$room": { "$uid": { ".write": "auth != null" } } },
+    "chat": {
+      "$room": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+        "$msg": { "text": { ".validate": "newData.isString() && newData.val().length <= 200" } }
+      }
+    }
+  }
+}
