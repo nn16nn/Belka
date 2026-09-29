@@ -544,7 +544,7 @@ button{font:inherit;color:inherit}
   </main>
 
   <section class="me" id="me">
-    <div class="mebar"><span class="ssuit mine" id="mysuit" hidden></span><span class="nm"><span data-i18n="names.0">Сіз</span> <small>· <span data-i18n="team.0">Біз</span></small></span><span class="status" id="status"></span></div>
+    <div class="mebar"><span class="ssuit mine" id="mysuit" hidden></span><span class="nm"><span data-i18n="names.0">Сіз</span></span><span class="status" id="status"></span></div>
     <div class="hand" id="hand" data-i18n-aria="yourCards" aria-label="Сіздің карталарыңыз"></div>
   </section>
 </div>
@@ -1085,7 +1085,7 @@ function renderSeats(){if(ENG)return;
     const n=G.hands[s].length;
     const badge=G.jcHolder===s?`<span class="jtag" title="${t('jackHere')}">${svg('C')}<b>${LABEL.J}</b></span>`:'';
     const ss=G.seatSuit&&G.deal>1?`<span class="ssuit${RED(G.seatSuit[s])?' red':''}${G.seatSuit[s]===G.trump?' on':''}">${svg(G.seatSuit[s])}</span>`:'';
-    el.innerHTML=`<div class="ava${s===2?' partner':''}">${avatarSVG(s)}${badge}${ss}</div><div class="nm">${NAMES[s]} <small>· ${TEAM[s%2]}</small></div><div class="backs">${'<span class="mb"></span>'.repeat(n)}</div>`;
+    el.innerHTML=`<div class="ava${s===2?' partner':''}">${avatarSVG(s)}${badge}${ss}</div><div class="nm">${NAMES[s]}</div><div class="backs">${'<span class="mb"></span>'.repeat(n)}</div>`;
     el.classList.toggle('turn',G.phase==='play'&&G.turn===s&&G.trick.length<4);
   }
   $('#me').classList.toggle('turn',G.phase==='play'&&G.turn===0&&G.trick.length<4);
