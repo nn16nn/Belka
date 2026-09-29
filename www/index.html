@@ -448,6 +448,11 @@ button{font:inherit;color:inherit}
 .red-ink{color:#ef7580;text-shadow:0 3px 0 rgba(80,10,20,.6)}
 .shake{animation:shake .55s .4s both}
 @keyframes shake{10%,50%,90%{transform:translate(-7px,3px)}30%,70%{transform:translate(7px,-3px)}100%{transform:none}}
+.hangegg{width:min(46vw,200px);height:auto;filter:drop-shadow(0 20px 26px rgba(0,0,0,.5)) drop-shadow(0 0 36px rgba(241,203,128,.4));animation:eggdrop 1s cubic-bezier(.3,1.5,.5,1) both}
+.hangegg .swing{transform-origin:100px 6px;transform-box:view-box;animation:swing 1.6s .9s ease-in-out infinite alternate}
+@keyframes swing{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
+.fx.hang{background:radial-gradient(55% 45% at 50% 42%,rgba(92,70,34,.92),rgba(9,20,28,.97) 72%)}
+.fx.hang.lost{background:radial-gradient(55% 45% at 50% 42%,rgba(110,34,44,.9),rgba(9,20,28,.97) 72%)}
 .fx.mock{background:radial-gradient(60% 50% at 50% 45%,rgba(30,48,58,.9),rgba(8,14,20,.97) 70%)}
 .goat{width:min(38vw,150px);color:var(--ivory);animation:goat 1.2s .5s ease-in-out infinite alternate,up .6s both}
 @keyframes goat{from{transform:rotate(-6deg)}to{transform:rotate(6deg) translateY(-4px)}}
@@ -595,8 +600,8 @@ kk:{
  cardsOf:['Сіздің карталарыңыз','Серіктің карталары','Ерланның карталары','Дәуреннің карталары'],
  suits:{C:'Треф',S:'Қарға',H:'Жүрек',D:'Қиық'},ranks:{'7':'Жеті','8':'Сегіз','9':'Тоғыз','10':'Он',J:'Балта',Q:'Мәтке',K:'Патша',A:'Түз'},label:{J:'В',Q:'Д',K:'К',A:'Т'},
  o_ace:'Түз тастау',o_ace1:'Түзді тастауға болмайды',o_ace1s:'ойналмаған түстің',o_ace2:'Түзді тастауға болады',o_ace2s:'кез келген уақытта',
- o_save:'Құтқару',o_save1:'30 бар',o_save1s:'30 ұпай құтқарады',o_save2:'31 бар',o_save2s:'31 ұпай құтқарады',o_save3:'Жоқ',o_save3s:'құтқару есептелмейді',
- o_egg:'Жұмыртқа · 60 : 60',o_egg1:'Плюс 4 көз',o_egg1s:'келесі таратуда',o_egg2:'Көздер екі есе',o_egg2s:'келесі таратуда',
+ o_save:'Құтқару',o_save1:'30 бар',o_save1s:'30 ұпай құтқарады',o_save2:'31 бар',o_save2s:'31 ұпай құтқарады',o_save3:'Жоқ',o_save3s:'',
+ o_egg:'Жұмыртқа · 60 : 60',o_egg1:'Плюс 4 көз',o_egg1s:'келесі таратуда',o_egg2:'Жұмыртқа ілу',o_egg2s:'партия соңында',
  o_naked:'Жалаңаш',o_naked1:'Плюс 4 көз',o_naked1s:'бір жақ 120 ұпай алса',o_naked2:'Ойынның соңы',o_naked2s:'бірден жеңіс',
  felt_lazurit:'Лазурит мата',felt_emerald:'Жасыл мата',felt_walnut:'Жаңғақ ағаш',felt_ebony:'Қара ағаш',
  setTitle:'Карталар мен үстел',cards:'Карталар',table:'Үстел',premium:'Премиум',classic:'Классика',save:'Сақтау',lang:'Тіл',
@@ -608,7 +613,7 @@ kk:{
  redeal:'Қайта тарату',redealJacks:'Төрт балта — қайта таратамыз',redealLow:'Ұпайсыз қол — қайта таратамыз',fourJacks:'4 балта',
  fourJacksTxt:'{0} төрт балта бір қолда. Көзірдің бәрі бір адамда — ойын әділ болмайды.',pts:'{0} ұпай',lowTxt:'{0} қолда 10 ұпай да жоқ. Мұндай картамен ойнауға болмайды.',
  p_nakedFin:'Жалаңаш — ойынның соңы',p_deal1:'1-тарату: балта жасырын — әрдайым 2 көз',p_win:'61+ ұпай',p_trumpUs:'Треф балтасы бізде болды',p_trumpThem:'Треф балтасы оларда болды',p_trump:'Треф балтасы қарсыласта болды',
- p_naked:'Жалаңаш: 120 ұпайдың бәрі бір жақта',p_save:'Құтқарылмады: {0} < {1}',p_egg4:'Жұмыртқа үшін',p_egg2:'Жұмыртқа: көздер екі есе',
+ p_naked:'Жалаңаш: 120 ұпайдың бәрі бір жақта',p_save:'Құтқарылмады: {0} < {1}',p_egg4:'Жұмыртқа үшін',p_eggUs:'Жұмыртқа бізде — партияны ұтсақ, ілінеді',p_eggThem:'Жұмыртқа оларда — партияны ұтса, ілінеді',hangNext:'ұтқандар жұмыртқаны алады',eggFxHang:'жұмыртқаны алады. Партияны да ұтса — жұмыртқа ілінеді',hang:'ЖҰМЫРТҚА ІЛІНДІ!',hangUs:'Жұмыртқаны біз алып едік, партия да біздікі. Қарсыластың жұмыртқасы ілініп қалды!',hangThem:'Жұмыртқа оларда еді, партияны да олар алды. Біздің жұмыртқа ілініп қалды…',
  eggFx:'Ешкім көз ашпады. Келесі таратуда жеңген команда {0}.',eggFxX2:'көздерді екі есе ашады',eggFx4:'плюс 4 көз ашады',
  nakedUs:'Біз жалаңаш қылдық',nakedThem:'Бізді жалаңаш қылды',nakedUsTxt:'120 ұпайдың бәрі біздің жақта. Қарсылас бір ұпай да ала алмады.',nakedThemTxt:'120 ұпайдың бәрі қарсыласта. Біз бір ұпай да ала алмадық.',
  gameOverShort:' Партия бітті!',plus4Us:' Бізге плюс 4 көз.',plus4Them:' Оларға плюс 4 көз.',
@@ -624,7 +629,7 @@ kk:{
   '<b>Түсімен жүру міндетті.</b> Жоқ болса — көзірмен «шабасыз» немесе кез келген картаны тастайсыз.',
   'Үлкендігі: Түз › 10 › Патша › Мәтке › 9 › 8 › 7. Ұпай: <b>Түз 11, 10 — 10, Патша 4, Мәтке 3, Балта 2</b>. Барлығы 120.',
   '<b>61 ұпай — 1 көз.</b> Қарсылас құтқарылмаса (30 немесе 31 бар), тағы +1 көз. Треф балтасы қарсыласта болса, тағы +1 көз. 1-таратуда әрқашан 2 көз.',
-  '<b>60 : 60 — жұмыртқа</b>: бұл таратуда көз ашылмайды, келесі таратуда көз екі есе немесе +4. <b>Жалаңаш</b> — бір жақ 120 ұпай жинаса: жеңіс немесе +4 көз.',
+  '<b>60 : 60 — жұмыртқа</b>: бұл таратуда көз ашылмайды, келесі таратуда +4 көз немесе жұмыртқа ілу: келесі таратуды ұтқандар партияны да ұтса — жұмыртқа ілінеді. <b>Жалаңаш</b> — бір жақ 120 ұпай жинаса: жеңіс немесе +4 көз.',
   '<b>12 көз</b> ашқан команда жеңеді.'],
  newParty:'Жаңа партия',chooseRules:'Ережені таңдаңыз',back:'Артқа',quitQ:'Қазіргі ойынды тастап, жаңасын бастайсыз ба?',quitTxt:'Ашылған көздер нөлге түседі.',yesStart:'Иә, бастау',keepPlaying:'Жалғастыру',
  online:'Онлайн',onlineNA:'Бұл алдын ала қарау бетінде сервер жабық. Онлайн ойын Android қолданбасында және сайтта жұмыс істейді.',login:'Кіру',register:'Тіркелу',nick:'Ник',nickHelp:'3–12 әріп не сан',pass:'Құпия сөз',passHelp:'Кемінде 6 таңба',
@@ -646,8 +651,8 @@ ru:{
  cardsOf:['Ваши карты','Карты Серика','Карты Ерлана','Карты Даурена'],
  suits:{C:'Трефы',S:'Пики',H:'Червы',D:'Бубны'},ranks:{'7':'Семь','8':'Восемь','9':'Девять','10':'Десять',J:'Валет',Q:'Дама',K:'Король',A:'Туз'},label:{J:'В',Q:'Д',K:'К',A:'Т'},
  o_ace:'Сброс туза',o_ace1:'Туза сбрасывать нельзя',o_ace1s:'в масть, которой не ходили',o_ace2:'Туза сбрасывать можно',o_ace2s:'в любой момент',
- o_save:'Спас',o_save1:'Спас 30',o_save1s:'30 очков спасают',o_save2:'Спас 31',o_save2s:'31 очко спасает',o_save3:'Без спаса',o_save3s:'спас не считается',
- o_egg:'Яйца · 60 : 60',o_egg1:'Плюс 4 глаза',o_egg1s:'в следующей раздаче',o_egg2:'Глаза вдвойне',o_egg2s:'в следующей раздаче',
+ o_save:'Спас',o_save1:'Спас 30',o_save1s:'30 очков спасают',o_save2:'Спас 31',o_save2s:'31 очко спасает',o_save3:'Без спаса',o_save3s:'',
+ o_egg:'Яйца · 60 : 60',o_egg1:'Плюс 4 глаза',o_egg1s:'в следующей раздаче',o_egg2:'Повесить яйца',o_egg2s:'в конце партии',
  o_naked:'Голые',o_naked1:'Плюс 4 глаза',o_naked1s:'если одна пара взяла 120',o_naked2:'Конец партии',o_naked2s:'сразу победа',
  felt_lazurit:'Лазурное сукно',felt_emerald:'Зелёное сукно',felt_walnut:'Орех',felt_ebony:'Эбеновое дерево',
  setTitle:'Карты и стол',cards:'Карты',table:'Стол',premium:'Премиум',classic:'Классика',save:'Сохранить',lang:'Язык',
@@ -659,7 +664,7 @@ ru:{
  redeal:'Пересдать',redealJacks:'Четыре валета — пересдача',redealLow:'Пустая рука — пересдача',fourJacks:'4 валета',
  fourJacksTxt:'{0} все четыре валета. Все старшие козыри у одного игрока — так играть нечестно.',pts:'{0} очков',lowTxt:'{0} меньше 10 очков на руках. С такими картами не играют.',
  p_nakedFin:'Голые — конец партии',p_deal1:'Раздача 1: валет скрыт — всегда 2 глаза',p_win:'61+ очков',p_trumpUs:'Валет треф был у нас',p_trumpThem:'Валет треф был у них',p_trump:'Валет треф был у соперников',
- p_naked:'Голые: все 120 очков у одной пары',p_save:'Не спаслись: {0} < {1}',p_egg4:'За яйца',p_egg2:'Яйца: глаза вдвойне',
+ p_naked:'Голые: все 120 очков у одной пары',p_save:'Не спаслись: {0} < {1}',p_egg4:'За яйца',p_eggUs:'Яйца у нас — выиграем партию, и они повешены',p_eggThem:'Яйца у них — выиграют партию, и они повешены',hangNext:'победители забирают яйца',eggFxHang:'забирают яйца. Выиграют партию — яйца повешены',hang:'ЯЙЦА ПОВЕШЕНЫ!',hangUs:'Яйца были у нас, и партия наша. Соперникам повесили яйца!',hangThem:'Яйца были у них, и партию взяли они. Нам повесили яйца…',
  eggFx:'Глаза не открылись. В следующей раздаче победители {0}.',eggFxX2:'получат глаза вдвойне',eggFx4:'получат ещё 4 глаза',
  nakedUs:'Мы раздели соперников',nakedThem:'Нас раздели',nakedUsTxt:'Все 120 очков наши. Соперники не взяли ни очка.',nakedThemTxt:'Все 120 очков у соперников. Мы не взяли ни очка.',
  gameOverShort:' Партия окончена!',plus4Us:' Нам +4 глаза.',plus4Them:' Им +4 глаза.',
@@ -675,7 +680,7 @@ ru:{
   '<b>Ходить в масть обязательно.</b> Нет масти — бейте козырем или сбросьте любую карту.',
   'Старшинство: туз › 10 › король › дама › 9 › 8 › 7. Очки: <b>туз 11, 10 — 10, король 4, дама 3, валет 2</b>. Всего 120.',
   '<b>61–90 очков — 1 глаз, 91–119 — 2 глаза.</b> Если валет треф был у соперников, ещё +1 глаз. В 1-й раздаче всегда 2 глаза.',
-  '<b>60 : 60 — яйца</b>: глаза не открываются, в следующей раздаче глаза вдвойне или +4. <b>Голые</b> — одна пара взяла все 120 очков: победа или +4 глаза.',
+  '<b>60 : 60 — яйца</b>: глаза не открываются, в следующей раздаче +4 глаза или «повесить яйца»: если победители следующей раздачи выиграют и партию — яйца повешены. <b>Голые</b> — одна пара взяла все 120 очков: победа или +4 глаза.',
   'Побеждает пара, открывшая <b>12 глаз</b>.'],
  newParty:'Новая партия',chooseRules:'Выберите правила',back:'Назад',quitQ:'Бросить текущую игру и начать новую?',quitTxt:'Открытые глаза обнулятся.',yesStart:'Да, начать',keepPlaying:'Продолжить',
  online:'Онлайн',onlineNA:'В этом превью сервер недоступен. Онлайн-игра работает в Android-приложении и на сайте.',login:'Войти',register:'Регистрация',nick:'Ник',nickHelp:'3–12 букв или цифр',pass:'Пароль',passHelp:'Минимум 6 символов',
@@ -697,8 +702,8 @@ en:{
  cardsOf:['Your cards',"Serik's cards","Erlan's cards","Dauren's cards"],
  suits:{C:'Clubs',S:'Spades',H:'Hearts',D:'Diamonds'},ranks:{'7':'Seven','8':'Eight','9':'Nine','10':'Ten',J:'Jack',Q:'Queen',K:'King',A:'Ace'},label:{J:'J',Q:'Q',K:'K',A:'A'},
  o_ace:'Discarding aces',o_ace1:'No ace discards',o_ace1s:'in a suit not yet led',o_ace2:'Aces can be discarded',o_ace2s:'at any time',
- o_save:'Save line',o_save1:'Save 30',o_save1s:'30 points save you',o_save2:'Save 31',o_save2s:'31 points save you',o_save3:'No save',o_save3s:'save line not used',
- o_egg:'Eggs · 60 : 60',o_egg1:'Plus 4 eyes',o_egg1s:'in the next deal',o_egg2:'Double eyes',o_egg2s:'in the next deal',
+ o_save:'Save line',o_save1:'Save 30',o_save1s:'30 points save you',o_save2:'Save 31',o_save2s:'31 points save you',o_save3:'No save',o_save3s:'',
+ o_egg:'Eggs · 60 : 60',o_egg1:'Plus 4 eyes',o_egg1s:'in the next deal',o_egg2:'Hang the eggs',o_egg2s:'at game end',
  o_naked:'Clean sweep',o_naked1:'Plus 4 eyes',o_naked1s:'when one pair takes 120',o_naked2:'Game over',o_naked2s:'instant win',
  felt_lazurit:'Azure felt',felt_emerald:'Green felt',felt_walnut:'Walnut',felt_ebony:'Ebony',
  setTitle:'Cards & table',cards:'Cards',table:'Table',premium:'Premium',classic:'Classic',save:'Save',lang:'Language',
@@ -710,7 +715,7 @@ en:{
  redeal:'Redeal',redealJacks:'Four jacks — redeal',redealLow:'Empty hand — redeal',fourJacks:'4 jacks',
  fourJacksTxt:'{0} all four jacks. One player holds every top trump, so the deal is replayed.',pts:'{0} pts',lowTxt:'{0} fewer than 10 points in hand, so the deal is replayed.',
  p_nakedFin:'Clean sweep — game over',p_deal1:'Deal 1: jack hidden — always 2 eyes',p_win:'61+ points',p_trumpUs:'Jack of clubs was ours',p_trumpThem:'Jack of clubs was theirs',p_trump:'Jack of clubs was with the opponents',
- p_naked:'Clean sweep: all 120 points',p_save:'Not saved: {0} < {1}',p_egg4:'Eggs bonus',p_egg2:'Eggs: eyes doubled',
+ p_naked:'Clean sweep: all 120 points',p_save:'Not saved: {0} < {1}',p_egg4:'Eggs bonus',p_eggUs:'Eggs are ours — win the game to hang them',p_eggThem:'Eggs are theirs — if they win the game, they hang',hangNext:'the winners take the eggs',eggFxHang:'take the eggs. Win the game too and the eggs get hung',hang:'EGGS HUNG!',hangUs:'We took the eggs and the game. The opponents just got their eggs hung!',hangThem:'They took the eggs and the game. Our eggs got hung…',
  eggFx:'No eyes this deal. Next deal, the winners {0}.',eggFxX2:'score double eyes',eggFx4:'get 4 extra eyes',
  nakedUs:'We swept them',nakedThem:'We got swept',nakedUsTxt:'All 120 points are ours. The opponents scored nothing.',nakedThemTxt:'All 120 points went to the opponents. We scored nothing.',
  gameOverShort:' Game over!',plus4Us:' +4 eyes to us.',plus4Them:' +4 eyes to them.',
@@ -726,7 +731,7 @@ en:{
   '<b>You must follow suit.</b> If you can’t, trump or discard any card.',
   'Rank: A › 10 › K › Q › 9 › 8 › 7. Points: <b>A 11, 10 = 10, K 4, Q 3, J 2</b>. Total 120.',
   '<b>61–90 points — 1 eye, 91–119 — 2 eyes.</b> +1 more eye if the jack of clubs was with the opponents. Deal 1 always gives 2 eyes.',
-  '<b>60 : 60 — eggs</b>: no eyes this deal; next deal eyes are doubled or +4. <b>Clean sweep</b> — one pair takes all 120 points: instant win or +4 eyes.',
+  '<b>60 : 60 — eggs</b>: no eyes this deal; next deal gives +4 eyes, or “hang the eggs”: if the next deal’s winners also win the game, the eggs are hung. <b>Clean sweep</b> — one pair takes all 120 points: instant win or +4 eyes.',
   'The first pair to open <b>12 eyes</b> wins.'],
  newParty:'New game',chooseRules:'Choose your rules',back:'Back',quitQ:'Quit this game and start a new one?',quitTxt:'All open eyes reset to zero.',yesStart:'Yes, start',keepPlaying:'Keep playing',
  online:'Online',onlineNA:'The server is not reachable in this preview. Online play works in the Android app and on the website.',login:'Log in',register:'Sign up',nick:'Nickname',nickHelp:'3–12 letters or digits',pass:'Password',passHelp:'At least 6 characters',
@@ -766,7 +771,7 @@ const DEF_RULES={ace:'played',save:30,egg:'plus4',naked:'eyes'};
 const OPTS=[
  {k:'ace',t:'o_ace',o:[['played','o_ace1','o_ace1s','aceNo'],['any','o_ace2','o_ace2s','aceOk']]},
  {k:'save',t:'o_save',o:[[30,'o_save1','o_save1s','save30'],[31,'o_save2','o_save2s','save31'],['none','o_save3','o_save3s','saveNone']]},
- {k:'egg',t:'o_egg',o:[['plus4','o_egg1','o_egg1s','egg4'],['x2','o_egg2','o_egg2s','egg2']]},
+ {k:'egg',t:'o_egg',o:[['plus4','o_egg1','o_egg1s','egg4'],['hang','o_egg2','o_egg2s','eggHang']]},
  {k:'naked',t:'o_naked',o:[['eyes','o_naked1','o_naked1s','naked4'],['win','o_naked2','o_naked2s','nakedFin']]}
 ];
 const DEF_SET={deck:'premium',felt:'lazurit',lang:'kk'};
@@ -797,6 +802,7 @@ const IC={
  aceNo:`<rect x="7" y="4" width="22" height="30" rx="4"/><text class="d" x="18" y="25" font-size="15">Т</text><path d="M26 41h15M36 36l5 5-5 5"/><path d="M5 45L43 3" stroke="#0b2230" stroke-width="6"/><path d="M5 45L43 3" stroke="#e0606c" stroke-width="2.6"/>`,
  egg4:`<path d="M9 18c0-7 3.4-13 7-13s7 6 7 13c0 5-3 8-7 8s-7-3-7-8z"/><path d="M25 18c0-7 3.4-13 7-13s7 6 7 13c0 5-3 8-7 8s-7-3-7-8z"/><text class="t" x="24" y="45" font-size="15">+4</text>`,
  egg2:`<path d="M9 18c0-7 3.4-13 7-13s7 6 7 13c0 5-3 8-7 8s-7-3-7-8z"/><path d="M25 18c0-7 3.4-13 7-13s7 6 7 13c0 5-3 8-7 8s-7-3-7-8z"/><text class="t" x="24" y="45" font-size="15">×2</text>`,
+ eggHang:`<path d="M24 2v8M10 12h28"/><path d="M17 12l-3 10M31 12l3 10" stroke-width="1.4"/><path d="M7 32c0-6 3-11 7-11s7 5 7 11c0 5-3 8-7 8s-7-3-7-8z"/><path d="M27 32c0-6 3-11 7-11s7 5 7 11c0 5-3 8-7 8s-7-3-7-8z"/>`,
  naked4:`<text class="t" x="24" y="19" font-size="15">120</text><path d="M8 25h32" stroke-dasharray="2 3"/><text class="t" x="24" y="44" font-size="15">+4</text>`,
  nakedFin:`<text class="t" x="24" y="19" font-size="15">120</text><path d="M8 25h32" stroke-dasharray="2 3"/><path d="M15 46V30M15 30h17l-4 4.5 4 4.5H15"/><path d="M20 30v9M26 30v9" stroke-width="1.4"/>`,
  save30:`<circle cx="24" cy="15" r="11"/><circle cx="24" cy="15" r="4.5"/><path d="M16.5 7.5l4.3 4.3M31.5 7.5l-4.3 4.3M16.5 22.5l4.3-4.3M31.5 22.5l-4.3-4.3" stroke-width="3"/><text class="t" x="24" y="45" font-size="15">30</text>`,
@@ -874,6 +880,11 @@ const GOLD_EGG=`<svg class="goldegg" viewBox="0 0 200 250" aria-hidden="true"><d
  <path d="M26 164c20 10 40-10 60 0s40 10 60 0 30-8 38 0" fill="none" stroke="url(#eg2)" stroke-width="2"/>
  <g fill="#8a5a1a" fill-opacity=".38"><path d="M100 96l9 16-9 16-9-16z"/><path d="M60 118l6 10-6 10-6-10z"/><path d="M140 118l6 10-6 10-6-10z"/></g>
  <ellipse class="glint" cx="72" cy="62" rx="16" ry="28" transform="rotate(-24 72 62)" fill="#fff" fill-opacity=".55"/></g></svg>`;
+const HANG=`<svg class="hangegg" viewBox="0 0 200 250" aria-hidden="true"><defs><radialGradient id="hg1" cx="38%" cy="30%" r="75%"><stop offset="0" stop-color="#fff6d8"/><stop offset=".3" stop-color="#f6d58f"/><stop offset=".65" stop-color="#d6a34c"/><stop offset="1" stop-color="#7d5116"/></radialGradient></defs>
+ <path d="M60 6h80" stroke="#8a6a3a" stroke-width="8" stroke-linecap="round"/>
+ <g class="swing"><path d="M100 6v34M100 40L66 118M100 40l34 78" stroke="#e9d9b4" stroke-width="3" fill="none"/><circle cx="100" cy="40" r="6" fill="#f1cb80"/>
+ <path d="M66 112c-22 0-36 38-36 66 0 26 16 42 36 42s36-16 36-42c0-28-14-66-36-66z" fill="url(#hg1)"/><path d="M134 112c-22 0-36 38-36 66 0 26 16 42 36 42s36-16 36-42c0-28-14-66-36-66z" fill="url(#hg1)"/>
+ <ellipse cx="54" cy="146" rx="7" ry="15" transform="rotate(-18 54 146)" fill="#fff" fill-opacity=".5"/><ellipse cx="122" cy="146" rx="7" ry="15" transform="rotate(-18 122 146)" fill="#fff" fill-opacity=".5"/></g></svg>`;
 const BLIND=`<svg class="goat" viewBox="0 0 120 124" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
  <circle cx="60" cy="62" r="40"/>
  <path d="M18 52c24-8 60-8 84 0l-2 18c-24-7-56-7-80 0z" fill="#1b232c" stroke="currentColor"/>
@@ -888,11 +899,13 @@ function fx(type,d={}){
       html=`<div class="rays"></div><canvas></canvas><div class="stage">${GOLD_EGG}<div class="kick up" style="--d:.7s">60 : 60</div><h3 class="gold-ink up" style="--d:.85s">${t('goldEgg')}</h3><p class="up" style="--d:1s">${d.text}</p></div>`}
     if(type==='naked'){d.lost?sfx.mock():sfx.naked();el.classList.toggle('lost',!!d.lost);$('#app').classList.remove('shake');void $('#app').offsetWidth;$('#app').classList.add('shake');
       html=`<canvas></canvas><span class="ring"></span><span class="ring r2"></span><span class="ring r3"></span><div class="stage"><div class="who up" style="--d:.5s">${d.team}</div><div class="slam ${d.lost?'red-ink':'gold-ink'}">${t('naked')}</div><div class="score-big up" style="--d:.7s">${d.a===120?`<b>${d.a}</b>`:d.a} : ${d.b===120?`<b>${d.b}</b>`:d.b}</div><p class="up" style="--d:.9s">${d.text}</p></div>`}
+    if(type==='hang'){d.us?sfx.egg():sfx.mock();el.classList.toggle('lost',!d.us);
+      html=`<div class="rays"></div><canvas></canvas><div class="stage">${HANG}<h3 class="${d.us?'gold-ink':'red-ink'} up" style="--d:.9s">${t('hang')}</h3><p class="up" style="--d:1.1s">${d.us?t('hangUs'):t('hangThem')}</p></div>`}
     if(type==='mock'){sfx.mock();
       html=`<canvas></canvas><div class="stage">${BLIND}<div class="stamp">${t('blind')}</div><p class="up" style="--d:.8s">${d.text}</p></div>`}
     el.innerHTML=html+`<div class="tap">${t('tap')}</div>`;
     document.body.appendChild(el);
-    const stop=confetti(el.querySelector('canvas'),type);
+    const stop=confetti(el.querySelector('canvas'),type==='hang'&&!d.us?'mock':type);
     const t0=Date.now();let done=false;
     const close=()=>{if(done)return;done=true;el.classList.add('out');setTimeout(()=>{stop();el.remove();res()},340)};
     el.addEventListener('click',()=>{if(Date.now()-t0>900)close()});
@@ -1124,7 +1137,7 @@ function toast(html,ms=2600){if(ENG)return;const t=$('#toast');t.innerHTML=html;
 /* ---------- flow ---------- */
 function newGame(){
   clearTimers();
-  G={rules:{...RULES},eyes:[0,0],deal:0,dealer:Math.floor(Math.random()*4),seatSuit:null,bonus:0,phase:'play',hands:[[],[],[],[]],trick:[],played:[],leader:0,turn:0,pts:[0,0],trump:'C',trumpTeam:0,jcHolder:0,lock:false,fresh:true,result:null};
+  G={rules:{...RULES},eyes:[0,0],deal:0,dealer:Math.floor(Math.random()*4),seatSuit:null,bonus:0,hung:[0,0],phase:'play',hands:[[],[],[],[]],trick:[],played:[],leader:0,turn:0,pts:[0,0],trump:'C',trumpTeam:0,jcHolder:0,lock:false,fresh:true,result:null};
   $('#title').hidden=true;closeSheet();
   startDeal();
 }
@@ -1225,7 +1238,7 @@ function endDeal(){
       else if(G.deal>1&&RU.save!=='none'&&G.pts[l]<RU.save)parts.push(['save',1,RU.save===30?'save30':'save31',[G.pts[l],RU.save]]);
       let e=parts.reduce((s,p)=>s+p[1],0);
       if(G.bonus==='plus4'){parts.push(['egg4',4,'egg4']);e+=4}
-      else if(G.bonus==='x2'){parts.push(['egg2',e,'egg2']);e*=2}
+      else if(G.bonus==='hang'){G.hung=G.hung||[0,0];G.hung[w]++;parts.push(['egg',0,'eggHang'])}
       G.eyes[w]=Math.min(12,G.eyes[w]+e);
       res={kind:'win',w,e,parts};
     }
@@ -1243,13 +1256,13 @@ function endDeal(){
 }
 async function afterDeal(){if(ENG)return;
   const r=G.result;if(!r)return;r.phaseAt=G.phase;
-  if(r.kind==='eggs')await fx('egg',{text:t('eggFx',G.bonus==='x2'?t('eggFxX2'):t('eggFx4'))});
+  if(r.kind==='eggs')await fx('egg',{text:t('eggFx',G.bonus==='hang'?t('eggFxHang'):t('eggFx4'))});
   else if(r.naked){const us=r.w===0;await fx('naked',{lost:!us,team:us?t('nakedUs'):t('nakedThem'),a:r.pts[0],b:r.pts[1],
     text:(us?t('nakedUsTxt'):t('nakedThemTxt'))+(r.instant?t('gameOverShort'):(us?t('plus4Us'):t('plus4Them')))})}
-  if(G.phase==='over'){const l=G.eyes[0]>=12?1:0;if(G.eyes[l]===0)await fx('mock',{text:l===0?t('blindUs'):t('blindThem')})}
+  if(G.phase==='over'){const l=G.eyes[0]>=12?1:0;if(G.hung&&G.hung[1-l]>0)await fx('hang',{us:l===1});if(G.eyes[l]===0)await fx('mock',{text:l===0?t('blindUs'):t('blindThem')})}
   if(G&&G.result&&(G.result===r||(ONLINE&&G.result.deal===r.deal&&G.phase===r.phaseAt)))showResult();
 }
-const partLabel=(p,r)=>p[0]==='trump'?t(r.tt===0?'p_trumpUs':'p_trumpThem'):t('p_'+p[0],...(p[3]||[]));
+const partLabel=(p,r)=>p[0]==='egg'?t(r.w===0?'p_eggUs':'p_eggThem'):p[0]==='trump'?t(r.tt===0?'p_trumpUs':'p_trumpThem'):t('p_'+p[0],...(p[3]||[]));
 const fmtR=v=>Number.isInteger(v)?String(v):v.toLocaleString(LANG==='en'?'en-US':'ru-RU',{minimumFractionDigits:2,maximumFractionDigits:2});
 function miniCard(k,i){const c={s:k[0],r:k.slice(1)};return `<span class="mc${RED(c.s)?' red':''}" style="--i:${i}">${LABEL[c.r]}${svg(c.s)}</span>`}
 function showResult(){if(ENG)return;
@@ -1258,10 +1271,10 @@ function showResult(){if(ENG)return;
   const [a,b]=r.pts;
   const w=r.kind==='win'?r.w:-1;
   let head,why;
-  if(r.kind==='eggs'){head=t('eggsHead');why=`<ul class="brk"><li><span>${icon(G.bonus==='x2'?'egg2':'egg4')}${t('nextDeal',G.bonus==='x2'?t('x2'):t('p4'))}</span><b>—</b></li></ul>`}
+  if(r.kind==='eggs'){head=t('eggsHead');why=`<ul class="brk"><li><span>${icon(G.bonus==='hang'?'eggHang':'egg4')}${t('nextDeal',G.bonus==='hang'?t('hangNext'):t('p4'))}</span><b>—</b></li></ul>`}
   else{
     head=r.instant?(w===0?t('winNaked'):t('lossNaked')):(w===0?t('winHead',r.e):t('lossHead',r.e));
-    why=`<ul class="brk">${r.parts.map(p=>`<li><span>${icon(p[2])}${partLabel(p,r)}</span><b>+${p[1]}</b></li>`).join('')}</ul>`;
+    why=`<ul class="brk">${r.parts.map(p=>`<li><span>${icon(p[2])}${partLabel(p,r)}</span><b>${p[1]?'+'+p[1]:'—'}</b></li>`).join('')}</ul>`;
   }
   const side=(tm,pts)=>`<div class="side${w===tm?' won':''}"><div class="sn" data-won="${t('won')}">${TEAM[tm]}</div><div class="big" data-count="${pts}">0</div><div class="sub">${t('sideSub',r.tk[tm])}</div><div class="mcs">${r.won[tm].map(miniCard).join('')}</div></div>`;
   const eyes=t=>{const e=G.eyes[t],p=r.prev[t];return `<div class="eg">${t===1?`<b>${e}</b>/12`:''}${sixSVG(e,t,p,'lg',1.1)}${t===0?`<b>${e}</b>/12`:''}</div>`};
@@ -1305,7 +1318,7 @@ function showRules(){
   <div class="row"><button class="btn gold" data-act="close">${t('gotIt')}</button></div>`);
 }
 function showSetup(){
-  let num=0;const g=OPTS.map((grp,gi)=>`<div class="og" role="radiogroup" aria-label="${t(grp.t)}"><div class="og-t">${t(grp.t)}</div><div class="seg${grp.o.length>2?' three':''}">${grp.o.map((o,oi)=>`<label><input type="radio" name="r-${grp.k}" id="r-${grp.k}-${oi}" value="${o[0]}" ${RULES[grp.k]===o[0]?'checked':''}>${icon(o[3],++num)}<span class="tx">${t(o[1])}<small>${t(o[2])}</small></span></label>`).join('')}</div></div>`).join('');
+  let num=0;const g=OPTS.map((grp,gi)=>`<div class="og" role="radiogroup" aria-label="${t(grp.t)}"><div class="og-t">${t(grp.t)}</div><div class="seg${grp.o.length>2?' three':''}">${grp.o.map((o,oi)=>`<label><input type="radio" name="r-${grp.k}" id="r-${grp.k}-${oi}" value="${o[0]}" ${RULES[grp.k]===o[0]?'checked':''}>${icon(o[3],++num)}<span class="tx">${t(o[1])}${t(o[2])?`<small>${t(o[2])}</small>`:''}</span></label>`).join('')}</div></div>`).join('');
   openSheet(`<div class="eyebrow">${t('newParty')}</div><h2>${t('chooseRules')}</h2><div class="opts">${g}</div><div class="row"><button class="btn gold" data-act="go">${t('start')}</button><button class="btn ghost" data-act="close">${t('back')}</button></div>`);
 }
 function readSetup(){/*v*/
@@ -1550,7 +1563,7 @@ function botNick(s){return t('bot')+' '+['Арлан','Бекзат','Даста
 function mySeatIn(room){const st=(room&&room.seats)||{};for(let i=0;i<4;i++)if(st[i]&&st[i].uid===ON.uid)return i;return -1}
 function meSeatObj(){return {uid:ON.uid,nick:ON.nick,rt:r2(ownProf().rating||1000)}}
 function createRoomSheet(){
-  let num=0;const g=OPTS.map(grp=>`<div class="og"><div class="og-t">${t(grp.t)}</div><div class="seg${grp.o.length>2?' three':''}">${grp.o.map((o,oi)=>`<label><input type="radio" name="r-${grp.k}" id="r-${grp.k}-${oi}" value="${o[0]}" ${RULES[grp.k]===o[0]?'checked':''}>${icon(o[3],++num)}<span class="tx">${t(o[1])}<small>${t(o[2])}</small></span></label>`).join('')}</div></div>`).join('');
+  let num=0;const g=OPTS.map(grp=>`<div class="og"><div class="og-t">${t(grp.t)}</div><div class="seg${grp.o.length>2?' three':''}">${grp.o.map((o,oi)=>`<label><input type="radio" name="r-${grp.k}" id="r-${grp.k}-${oi}" value="${o[0]}" ${RULES[grp.k]===o[0]?'checked':''}>${icon(o[3],++num)}<span class="tx">${t(o[1])}${t(o[2])?`<small>${t(o[2])}</small>`:''}</span></label>`).join('')}</div></div>`).join('');
   openSheet(`<div class="eyebrow">${t('online')}</div><h2>${t('createRoom')}</h2><div class="opts">${g}
    <div class="og"><div class="og-t">${t('chat')}</div><div class="seg"><label><input type="radio" name="r-chat" id="r-chat-1" value="1" checked><span class="tx">${t('chatOn')}</span></label><label><input type="radio" name="r-chat" id="r-chat-0" value="0"><span class="tx">${t('chatOff')}</span></label></div></div></div>
    <div class="row"><button class="btn gold" data-act="on-create-go">${t('create')}</button><button class="btn ghost" data-act="close">${t('cancel')}</button></div>`);
@@ -1671,7 +1684,7 @@ function hostPublish(){
 function normState(A){
   if(!A)return null;A=clone(A);
   A.trick=(A.trick||[]).filter(Boolean);A.led=A.led||[];A.played=A.played||[];
-  A.eyes=[(A.eyes||[])[0]||0,(A.eyes||[])[1]||0];A.pts=[(A.pts||[])[0]||0,(A.pts||[])[1]||0];A.tk=[(A.tk||[])[0]||0,(A.tk||[])[1]||0];
+  A.eyes=[(A.eyes||[])[0]||0,(A.eyes||[])[1]||0];A.hung=[(A.hung||[])[0]||0,(A.hung||[])[1]||0];A.pts=[(A.pts||[])[0]||0,(A.pts||[])[1]||0];A.tk=[(A.tk||[])[0]||0,(A.tk||[])[1]||0];
   A.won=[((A.won||[])[0]||[]),((A.won||[])[1]||[])];A.hc=[0,1,2,3].map(i=>(A.hc||[])[i]||0);
   if(A.seatSuit&&Array.isArray(A.seatSuit)){const o={};A.seatSuit.forEach((v,i)=>{if(v)o[i]=v});A.seatSuit=o}
   if(A.result){const r=A.result;r.pts=[(r.pts||[])[0]||0,(r.pts||[])[1]||0];r.tk=[(r.tk||[])[0]||0,(r.tk||[])[1]||0];r.prev=[(r.prev||[])[0]||0,(r.prev||[])[1]||0];r.won=[((r.won||[])[0]||[]),((r.won||[])[1]||[])];r.parts=(r.parts||[]).filter(Boolean)}
@@ -1734,7 +1747,7 @@ function hostPresence(){
 async function hostStart(){
   const room=ON.room,st=room.seats||{};if(![0,1,2,3].every(s=>st[s]))return;
   NET.cancelDisc(`rooms/${ON.r}/status`);
-  HG={rules:{...(room.rules||RULES)},eyes:[0,0],deal:0,dealer:Math.floor(Math.random()*4),seatSuit:null,bonus:0,phase:'play',hands:[[],[],[],[]],trick:[],played:[],led:[],leader:0,turn:0,pts:[0,0],tk:[0,0],won:[[],[]],trump:'C',trumpTeam:-1,jcHolder:-1,lock:false,result:null,
+  HG={rules:{...(room.rules||RULES)},eyes:[0,0],deal:0,dealer:Math.floor(Math.random()*4),seatSuit:null,bonus:0,hung:[0,0],phase:'play',hands:[[],[],[],[]],trick:[],played:[],led:[],leader:0,turn:0,pts:[0,0],tk:[0,0],won:[[],[]],trump:'C',trumpTeam:-1,jcHolder:-1,lock:false,result:null,
       gid:Date.now(),startR:[0,1,2,3].map(s=>st[s].bot?1000:(st[s].rt||1000)),bots:[0,1,2,3].map(s=>!!st[s].bot)};
   ON.lastH=[];ON.seq=0;
   await NET.update('',{[`ready/${ON.r}`]:null,[`moves/${ON.r}`]:null,[`chat/${ON.r}`]:null});
@@ -1766,7 +1779,7 @@ function rotView(A,my,hand){
   for(const k of ['turn','leader','dealer','jcHolder','firstHolder'])if(typeof A[k]==='number'&&A[k]>=0)V[k]=m(A[k]);
   if(A.seatSuit){V.seatSuit={};for(const s in A.seatSuit)V.seatSuit[m(+s)]=A.seatSuit[s]}
   V.trumpTeam=ft(A.trumpTeam);
-  for(const k of ['eyes','pts','tk','won'])V[k]=sw(A[k]);
+  for(const k of ['eyes','pts','tk','won','hung'])V[k]=sw(A[k]);
   if(A.result){const r=V.result;if(r.kind==='win')r.w=ft(r.w);r.tt=ft(r.tt);for(const k of ['pts','tk','won','prev'])r[k]=sw(A.result[k])}
   if(A.redeal)V.redeal.seat=m(A.redeal.seat);
   return V;
@@ -1893,7 +1906,7 @@ async function onlineAct(act,a,e){
   if(act==='on-forfeit'){closeSheet();const a=ownProf().active;ON.resume=null;await applyQuit(a&&a.loss);lobby();return}
   if(act==='on-rejoin'){closeSheet();const r=ON.resume;ON.resume=null;enterRoom(r);return}
 }
-if(NET_MODE==='mock')window.__BELKA={get HG(){return HG},set HG(v){HG=v},eng,get ON(){return ON}};
+if(NET_MODE==='mock')window.__BELKA={get HG(){return HG},set HG(v){HG=v},eng,get ON(){return ON},get G(){return G},endDeal,startDeal,clearTimers};
 $('#btnOnline').addEventListener('click',()=>{ac();openOnline()});
 $('#btnChat').addEventListener('click',openChatSheet);
 
