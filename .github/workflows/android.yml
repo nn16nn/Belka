@@ -21,11 +21,15 @@ jobs:
       - name: Restore upload key
         env:
           BELKA_KEYSTORE_B64: ${{ secrets.BELKA_KEYSTORE_B64 }}
+          BELKA_KEYSTORE_PASSWORD: ${{ secrets.BELKA_KEYSTORE_PASSWORD }}
         run: |
           if [ -z "$BELKA_KEYSTORE_B64" ]; then echo "::error::Add the BELKA_KEYSTORE_B64 secret"; exit 1; fi
-          mkdir -p signing && printf %s "$BELKA_KEYSTORE_B64" | tr -d ' \r\n\t' | base64 -d > signing/upload.jks
-          echo "key bytes: $(wc -c < signing/upload.jks)"
-          keytool -list -keystore signing/upload.jks -storepass "${{ secrets.BELKA_KEYSTORE_PASSWORD }}" | tail -1
+          set +e
+          mkdir -p signing
+          CLEAN=$(printf %s "$BELKA_KEYSTORE_B64" | tr -d ' \r\n\t')
+          printf %s "$CLEAN" | base64 -d > signing/upload.jks 2>/tmp/b64err
+          echo "::warning::b64len=${#CLEAN} pwlen=${#BELKA_KEYSTORE_PASSWORD} keysha=$(sha256sum signing/upload.jks | cut -c1-12) b64err=$(head -c 80 /tmp/b64err)"
+          keytool -list -keystore signing/upload.jks -storepass "$BELKA_KEYSTORE_PASSWORD" >/tmp/kt 2>&1 || { echo "::error::keytool: $(grep -i error /tmp/kt | head -1)"; exit 1; }
       - name: Build signed release bundle
         working-directory: android
         env:
