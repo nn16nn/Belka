@@ -416,6 +416,9 @@ button{font:inherit;color:inherit}
 .on-who:focus-visible{outline:2px solid var(--gold-2);outline-offset:2px;border-radius:4px}
 .nm .away{color:#ef9aa3;font-weight:600}
 .on-msgs p .on-who{display:block;font-size:11.5px;margin:0 0 2px}
+.on-del{all:unset;cursor:pointer;align-self:center;margin-top:6px;padding:8px 12px;font-size:13px;color:#ef8a94;text-decoration:underline;text-underline-offset:3px}
+.on-del:focus-visible{outline:2px solid #ef8a94;border-radius:6px}
+.btn.danger{background:#b0303e;color:#fff}
 
 /*ONLINE-CSS-END*/
 /* ---------- effects ---------- */
@@ -647,7 +650,7 @@ kk:{
  teamA:'1-команда',teamB:'2-команда',losses:'Жеңіліс',quits:'Шығып кетті',winrate:'Жеңіс %',logout:'Аккаунттан шығу',
  leaveGameQ:'Ойыннан шығасыз ба?',leaveGameTxt:'Шықсаңыз, жеңіліс есептеліп, «шығып кетті» санына +1 қосылады. Орныңызға бот отырады.',leaveRoomQ:'Бөлмеден шығасыз ба?',
  ready:'Дайынмын',nextSoon:'Барлығы дайын болғанда келесі тарату басталады',toRoom:'Бөлмеге оралу',unrated:'Рейтингсіз ойын: қарсыласта адам болмады',resumeQ:'Аяқталмаған ойыныңыз бар. Қайта кіресіз бе?',rejoin:'Қайта кіру',
- redealWait:'Қайта таратылуда…',roomGone:'Бөлме жабылды',quick:'Жылдам ойын',quickT:'Бос орын іздеп жатыр…',invite:'Шақыру',inviteT:'Досыңды шақыр',inviteMsg:'Белка ойнайық! Бөлмеге кір: {0}',copyLink:'Сілтемені көшіру',copied:'Сілтеме көшірілді',gameStarted:'Бұл бөлмеде ойын басталып кеткен',roomFull:'Бөлме толы',seatAway:'{0} шығып кетті — орнына бот ойнайды',seatBack:'{0} ойынға оралды',away:'бот ойнап тұр',block:'Үнін өшіру',unblock:'Үнін қосу',report:'Шағым түсіру',reported:'Шағым жіберілді. Рақмет!',blockedTxt:'Бұл ойыншының хабарлары сізге көрінбейді.',playerT:'Ойыншы',hostNow:'Енді сіз ойын иесісіз',me:'сіз',rules_t:'Ережелер',create:'Ашу',cancel:'Бас тарту',quitPenalty:'Аяқталмаған ойын үшін айыппұл: {0}',loading:'Жүктелуде…',rank:'Орын',
+ redealWait:'Қайта таратылуда…',roomGone:'Бөлме жабылды',delAcc:'Аккаунтты өшіру',delAccQ:'Аккаунтты біржола өшіресіз бе?',delAccTxt:'Профиль, рейтинг және статистика толық өшіріледі, қалпына келмейді. Растау үшін құпия сөзді енгізіңіз.',delDone:'Аккаунт өшірілді',quick:'Жылдам ойын',quickT:'Бос орын іздеп жатыр…',invite:'Шақыру',inviteT:'Досыңды шақыр',inviteMsg:'Белка ойнайық! Бөлмеге кір: {0}',copyLink:'Сілтемені көшіру',copied:'Сілтеме көшірілді',gameStarted:'Бұл бөлмеде ойын басталып кеткен',roomFull:'Бөлме толы',seatAway:'{0} шығып кетті — орнына бот ойнайды',seatBack:'{0} ойынға оралды',away:'бот ойнап тұр',block:'Үнін өшіру',unblock:'Үнін қосу',report:'Шағым түсіру',reported:'Шағым жіберілді. Рақмет!',blockedTxt:'Бұл ойыншының хабарлары сізге көрінбейді.',playerT:'Ойыншы',hostNow:'Енді сіз ойын иесісіз',me:'сіз',rules_t:'Ережелер',create:'Ашу',cancel:'Бас тарту',quitPenalty:'Аяқталмаған ойын үшін айыппұл: {0}',loading:'Жүктелуде…',rank:'Орын',
  eyesAria:'{0}: {1} көз'
 },
 ru:{
@@ -698,7 +701,7 @@ ru:{
  teamA:'Команда 1',teamB:'Команда 2',losses:'Поражений',quits:'Выходов',winrate:'Побед %',logout:'Выйти из аккаунта',
  leaveGameQ:'Выйти из игры?',leaveGameTxt:'Выход засчитается как поражение и +1 к выходам. Ваше место займёт бот.',leaveRoomQ:'Выйти из комнаты?',
  ready:'Готов',nextSoon:'Следующая раздача начнётся, когда все будут готовы',toRoom:'В комнату',unrated:'Игра без рейтинга: среди соперников не было людей',resumeQ:'У вас есть незаконченная игра. Вернуться?',rejoin:'Вернуться',
- redealWait:'Пересдача…',roomGone:'Комната закрыта',quick:'Быстрая игра',quickT:'Ищем свободное место…',invite:'Позвать',inviteT:'Позови друга',inviteMsg:'Давай в Белку! Заходи в комнату: {0}',copyLink:'Скопировать ссылку',copied:'Ссылка скопирована',gameStarted:'В этой комнате игра уже началась',roomFull:'Комната заполнена',seatAway:'{0} отключился — за него играет бот',seatBack:'{0} вернулся в игру',away:'играет бот',block:'Скрыть сообщения',unblock:'Показать сообщения',report:'Пожаловаться',reported:'Жалоба отправлена. Спасибо!',blockedTxt:'Сообщения этого игрока скрыты.',playerT:'Игрок',hostNow:'Теперь вы хозяин игры',me:'вы',rules_t:'Правила',create:'Создать',cancel:'Отмена',quitPenalty:'Штраф за незаконченную игру: {0}',loading:'Загрузка…',rank:'Место',
+ redealWait:'Пересдача…',roomGone:'Комната закрыта',delAcc:'Удалить аккаунт',delAccQ:'Удалить аккаунт навсегда?',delAccTxt:'Профиль, рейтинг и статистика будут удалены без возможности восстановления. Для подтверждения введите пароль.',delDone:'Аккаунт удалён',quick:'Быстрая игра',quickT:'Ищем свободное место…',invite:'Позвать',inviteT:'Позови друга',inviteMsg:'Давай в Белку! Заходи в комнату: {0}',copyLink:'Скопировать ссылку',copied:'Ссылка скопирована',gameStarted:'В этой комнате игра уже началась',roomFull:'Комната заполнена',seatAway:'{0} отключился — за него играет бот',seatBack:'{0} вернулся в игру',away:'играет бот',block:'Скрыть сообщения',unblock:'Показать сообщения',report:'Пожаловаться',reported:'Жалоба отправлена. Спасибо!',blockedTxt:'Сообщения этого игрока скрыты.',playerT:'Игрок',hostNow:'Теперь вы хозяин игры',me:'вы',rules_t:'Правила',create:'Создать',cancel:'Отмена',quitPenalty:'Штраф за незаконченную игру: {0}',loading:'Загрузка…',rank:'Место',
  eyesAria:'{0}: {1} глаз'
 },
 en:{
@@ -749,7 +752,7 @@ en:{
  teamA:'Team 1',teamB:'Team 2',losses:'Losses',quits:'Quits',winrate:'Win %',logout:'Log out',
  leaveGameQ:'Leave the game?',leaveGameTxt:'Leaving counts as a loss and adds 1 to your quits. A bot takes your seat.',leaveRoomQ:'Leave the room?',
  ready:'Ready',nextSoon:'The next deal starts when everyone is ready',toRoom:'Back to room',unrated:'Unrated: there were no human opponents',resumeQ:'You have an unfinished game. Rejoin?',rejoin:'Rejoin',
- redealWait:'Redealing…',roomGone:'The room was closed',quick:'Quick game',quickT:'Finding a free seat…',invite:'Invite',inviteT:'Invite a friend',inviteMsg:'Let’s play Belka! Join my room: {0}',copyLink:'Copy link',copied:'Link copied',gameStarted:'The game in this room has already started',roomFull:'The room is full',seatAway:'{0} disconnected — a bot is playing for them',seatBack:'{0} is back',away:'bot playing',block:'Mute player',unblock:'Unmute player',report:'Report',reported:'Report sent. Thank you!',blockedTxt:'Messages from this player are hidden.',playerT:'Player',hostNow:'You are now the host',me:'you',rules_t:'Rules',create:'Create',cancel:'Cancel',quitPenalty:'Penalty for an unfinished game: {0}',loading:'Loading…',rank:'Rank',
+ redealWait:'Redealing…',roomGone:'The room was closed',delAcc:'Delete account',delAccQ:'Delete your account permanently?',delAccTxt:'Your profile, rating and stats will be erased and cannot be restored. Enter your password to confirm.',delDone:'Account deleted',quick:'Quick game',quickT:'Finding a free seat…',invite:'Invite',inviteT:'Invite a friend',inviteMsg:'Let’s play Belka! Join my room: {0}',copyLink:'Copy link',copied:'Link copied',gameStarted:'The game in this room has already started',roomFull:'The room is full',seatAway:'{0} disconnected — a bot is playing for them',seatBack:'{0} is back',away:'bot playing',block:'Mute player',unblock:'Unmute player',report:'Report',reported:'Report sent. Thank you!',blockedTxt:'Messages from this player are hidden.',playerT:'Player',hostNow:'You are now the host',me:'you',rules_t:'Rules',create:'Create',cancel:'Cancel',quitPenalty:'Penalty for an unfinished game: {0}',loading:'Loading…',rank:'Rank',
  eyesAria:'{0}: {1} eyes'
 }};
 
@@ -1434,6 +1437,7 @@ function MOCKNET(){
     cancelDisc(p){discs=discs.filter(x=>x[0]!==p)},
     async top(p,c,n){const o=fromStore(clone(getP(load(),p)))||{};return Object.entries(o).filter(([,v])=>v&&typeof v[c]==='number').sort((a,b)=>b[1][c]-a[1][c]).slice(0,n)},
     connected(cb){cb(true)},
+    async delAccount(e,p){const a=accts();if(!a[e]||a[e].p!==p)throw{code:'auth/invalid-credential'};write([['users/'+a[e].uid,undefined]]);delete a[e];localStorage.setItem(A,JSON.stringify(a));setMe(null)},
     _drop(){if(discs.length)write(discs.map(([p,v])=>[p,v===null?undefined:v]));discs=[];ls.length=0}
   };
   window.addEventListener('pagehide',()=>api._drop());
@@ -1462,7 +1466,8 @@ function FBNET(){
     onDisc(p,v){v===null?R(p).onDisconnect().remove():R(p).onDisconnect().set(cl(v))},
     cancelDisc(p){R(p).onDisconnect().cancel()},
     async top(p,c,n){const s=await R(p).orderByChild(c).limitToLast(n).get();const a=[];s.forEach(x=>{a.push([x.key,x.val()])});return a.reverse()},
-    connected(cb){R('.info/connected').on('value',s=>cb(!!s.val()))}
+    connected(cb){R('.info/connected').on('value',s=>cb(!!s.val()))},
+    async delAccount(e,p){const u=au.currentUser;if(!u)throw{code:'auth/no-user'};await u.reauthenticateWithCredential(firebase.auth.EmailAuthProvider.credential(e,p));await db.ref('users/'+u.uid).remove();await u.delete()}
   };
 }
 
@@ -1565,7 +1570,8 @@ function profileView(){
   onShell('profile',`<div class="on-prof">
    <div class="on-pcard">${badge(ti,64)}<div><small>${t('profile')}</small><b>${esc(p.nick||'')}</b><span style="color:${TIERS[ti][2]}">${tierName(ti)}</span></div><em>${fmt2(p.rating||1000)}</em></div>
    <div class="on-stats">${[[t('games'),g],[t('wins'),w],[t('losses'),p.losses||0],[t('quits'),p.quits||0],[t('winrate'),g?Math.round(w/g*100)+'%':'—']].map(([n,v])=>`<div><b>${v}</b><span>${n}</span></div>`).join('')}</div>
-   <button class="btn ghost" data-act="on-logout">${t('logout')}</button></div>`);
+   <button class="btn ghost" data-act="on-logout">${t('logout')}</button>
+   <button class="on-del" data-act="on-delacc">${t('delAcc')}</button></div>`);
 }
 
 /* ---- rooms ---- */
@@ -1931,6 +1937,10 @@ async function onlineAct(act,a,e){
   if(act==='on-player'){playerSheet(a.dataset.uid,a.dataset.nick);return}
   if(act==='on-block'){toggleBlock(a.dataset.uid);closeSheet();if(ON.view==='room')roomView();return}
   if(act==='on-report'){reportPlayer(a.dataset.uid,a.dataset.nick);return}
+  if(act==='on-delacc'){openSheet(`<div class="eyebrow">${t('profile')}</div><h2>${t('delAccQ')}</h2><p>${t('delAccTxt')}</p><form id="on-delf" class="on-form" novalidate><label for="on-delp">${t('pass')}</label><input id="on-delp" type="password" autocomplete="current-password"><p class="on-err" id="on-dele" role="alert"></p><div class="row"><button class="btn danger" type="submit">${t('delAcc')}</button><button class="btn ghost" type="button" data-act="close">${t('cancel')}</button></div></form>`);
+    $('#on-delf').addEventListener('submit',async ev=>{ev.preventDefault();const b=ev.target.querySelector('.danger');b.disabled=true;
+      try{await NET.delAccount(nickEmail(ON.nick),$('#on-delp').value);ON.uid=null;ON.prof=null;try{localStorage.removeItem('belka-lastroom')}catch(x){}closeSheet();toast(t('delDone'),3000);authView()}
+      catch(er){b.disabled=false;const m=$('#on-dele');if(m)m.textContent=errText(er)}});return}
   if(act==='on-rejoin'){closeSheet();const r=ON.resume;ON.resume=null;enterRoom(r);return}
 }
 /* ---- quick play ---- */
