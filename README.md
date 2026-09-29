@@ -6,4 +6,6 @@
 - `android/` — Android жобасы
 - `.github/workflows/android.yml` — әр push-та қолтаңбалы `app-release.aab` құрастырады (Actions → Artifacts)
 
-Қажетті secret: `BELKA_KEYSTORE_PASSWORD`.
+Қажетті secret-тер: `BELKA_KEYSTORE_PASSWORD`, `BELKA_KEYSTORE_B64` (upload.jks base64 түрінде).
+
+`.github/workflows/pages.yml` — `www/` папкасын GitHub Pages-ке шығарады (онлайн ойын браузерде).

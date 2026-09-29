@@ -18,6 +18,12 @@ jobs:
           java-version: 21
       - run: npm ci
       - run: npx cap sync android
+      - name: Restore upload key
+        env:
+          BELKA_KEYSTORE_B64: ${{ secrets.BELKA_KEYSTORE_B64 }}
+        run: |
+          if [ -z "$BELKA_KEYSTORE_B64" ]; then echo "::error::Add the BELKA_KEYSTORE_B64 secret"; exit 1; fi
+          mkdir -p signing && echo "$BELKA_KEYSTORE_B64" | base64 -d > signing/upload.jks
       - name: Build signed release bundle
         working-directory: android
         env:
