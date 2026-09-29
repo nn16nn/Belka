@@ -1,0 +1,11 @@
+{
+  "appId": "kz.nurboldev.belka",
+  "appName": "Белка",
+  "webDir": "www",
+  "backgroundColor": "#0a1822",
+  "android": { "backgroundColor": "#0a1822" },
+  "plugins": {
+    "SplashScreen": { "launchShowDuration": 1200, "launchAutoHide": true, "backgroundColor": "#0a1822", "showSpinner": false },
+    "StatusBar": { "style": "DARK", "backgroundColor": "#0a1822", "overlaysWebView": false }
+  }
+}

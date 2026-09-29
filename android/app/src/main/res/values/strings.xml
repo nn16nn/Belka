@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Белка</string>
+    <string name="title_activity_main">Белка</string>
+    <string name="package_name">kz.nurboldev.belka</string>
+    <string name="custom_url_scheme">kz.nurboldev.belka</string>
+</resources>

@@ -1,0 +1,34 @@
+name: Build Android AAB
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - run: npm ci
+      - run: npx cap sync android
+      - name: Build signed release bundle
+        working-directory: android
+        env:
+          BELKA_KEYSTORE: ${{ github.workspace }}/signing/upload.jks
+          BELKA_KEYSTORE_PASSWORD: ${{ secrets.BELKA_KEYSTORE_PASSWORD }}
+          BELKA_VERSION_CODE: ${{ github.run_number }}
+        run: |
+          if [ -z "$BELKA_KEYSTORE_PASSWORD" ]; then echo "::error::Add the BELKA_KEYSTORE_PASSWORD secret in Settings → Secrets and variables → Actions"; exit 1; fi
+          chmod +x gradlew
+          ./gradlew bundleRelease --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: belka-release-aab
+          path: android/app/build/outputs/bundle/release/app-release.aab
