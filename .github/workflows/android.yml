@@ -39,7 +39,11 @@ jobs:
         run: |
           if [ -z "$BELKA_KEYSTORE_PASSWORD" ]; then echo "::error::Add the BELKA_KEYSTORE_PASSWORD secret in Settings → Secrets and variables → Actions"; exit 1; fi
           chmod +x gradlew
-          ./gradlew bundleRelease --no-daemon
+          set +e
+          ./gradlew bundleRelease --no-daemon --stacktrace > /tmp/g.log 2>&1
+          st=$?
+          tail -60 /tmp/g.log
+          if [ $st -ne 0 ]; then grep -nE "What went wrong|error:|Error|FAILURE|Could not|> " /tmp/g.log | grep -v "^.*at " | head -30 | while IFS= read -r l; do echo "::error::${l:0:300}"; done; exit $st; fi
       - uses: actions/upload-artifact@v4
         with:
           name: belka-release-aab
